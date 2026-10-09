@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Seller Dashboard | Personalised Gift Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .manage-section {
+            margin-top: 25px;
+            display: none;
+        }
+
+        .manage-section.active {
+            display: block;
+        }
+
+        .manage-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .manage-card h2 {
+            margin-bottom: 20px;
+        }
+
+        .order-item,
+        .sales-item,
+        .setting-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .order-item strong,
+        .sales-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .setting-item button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            margin-bottom: 15px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================== -->
+    <!-- SELLER NAVBAR -->
+    <!-- ============================== -->
+
+    <header class="seller-navbar">
+
+        <div class="seller-brand">
+
+            <div class="seller-logo">
+                P
+            </div>
+
+            <div>
+
+                <h2>
+                    Personalised Gift Store
+                </h2>
+
+                <span>
+                    Seller Workspace
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="seller-actions">
+
+            <button type="button">
+                🔔
+            </button>
+
+            <button type="button">
+                👤
+            </button>
+
+            <a href="index.html">
+                Logout
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ============================== -->
+    <!-- MAIN DASHBOARD -->
+    <!-- ============================== -->
+
+    <main class="seller-dashboard">
+
+
+        <!-- WELCOME -->
+
+        <section class="seller-welcome">
+
+            <div>
+
+                <p class="seller-label">
+                    SELLER DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome back, Seller!
+                </h1>
+
+                <p>
+                    Manage your products, orders and store
+                    from one simple dashboard.
+                </p>
+
+            </div>
+
+
+            <button
+                class="add-product-button"
+                type="button"
+                onclick="addNewProduct()">
+
+                + Add Product
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- STATS -->
+        <!-- ============================== -->
+
+        <section class="seller-stats">
+
+
+            <div class="seller-stat-card">
+
+                <span>
+                    Products
+                </span>
+
+                <strong>
+                    24
+                </strong>
+
+                <p>
+                    Active products
+                </p>
+
+            </div>
+
+
+            <div class="seller-stat-card">
+
+                <span>
+                    Orders
+                </span>
+
+                <strong>
+                    18
+                </strong>
+
+                <p>
+                    Orders received
+                </p>
+
+            </div>
+
+
+            <div class="seller-stat-card">
+
+                <span>
+                    Sales
+                </span>
+
+                <strong>
+                    ₹12,450
+                </strong>
+
+                <p>
+                    This month
+                </p>
+
+            </div>
+
+
+            <div class="seller-stat-card">
+
+                <span>
+                    Customers
+                </span>
+
+                <strong>
+                    86
+                </strong>
+
+                <p>
+                    Total customers
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================== -->
+
+        <section class="seller-content">
+
+
+            <!-- PRODUCTS -->
+
+            <div class="seller-panel">
+
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <p>
+                            STORE MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Your Products
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        onclick="showDashboardHome()">
+
+                        View All
+
+                    </button>
+
+                </div>
+
+
+
+                <div
+                    class="seller-product-list"
+                    id="sellerProductList">
+
+
+                    <!-- PRODUCT 1 -->
+
+                    <div
+                        class="seller-product"
+                        id="product-custom-memory-box">
+
+                        <div class="seller-product-icon">
+                            🎁
+                        </div>
+
+                        <div class="seller-product-info">
+
+                            <h3>
+                                Custom Memory Box
+                            </h3>
+
+                            <p>
+                                Personalised Gifts
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            ₹799
+                        </strong>
+
+                        <span class="stock">
+                            In Stock
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="editProduct('Custom Memory Box')">
+
+                            Edit
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="deleteProduct('Custom Memory Box')">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- PRODUCT 2 -->
+
+                    <div
+                        class="seller-product"
+                        id="product-name-printed-mug">
+
+                        <div class="seller-product-icon">
+                            ☕
+                        </div>
+
+                        <div class="seller-product-info">
+
+                            <h3>
+                                Name Printed Mug
+                            </h3>
+
+                            <p>
+                                Home & Lifestyle
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            ₹349
+                        </strong>
+
+                        <span class="stock">
+                            In Stock
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="editProduct('Name Printed Mug')">
+
+                            Edit
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="deleteProduct('Name Printed Mug')">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- PRODUCT 3 -->
+
+                    <div
+                        class="seller-product"
+                        id="product-custom-name-wallet">
+
+                        <div class="seller-product-icon">
+                            👜
+                        </div>
+
+                        <div class="seller-product-info">
+
+                            <h3>
+                                Custom Name Wallet
+                            </h3>
+
+                            <p>
+                                Accessories
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            ₹599
+                        </strong>
+
+                        <span class="stock">
+                            In Stock
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="editProduct('Custom Name Wallet')">
+
+                            Edit
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="deleteProduct('Custom Name Wallet')">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- PRODUCT 4 -->
+
+                    <div
+                        class="seller-product"
+                        id="product-custom-photo-keychain">
+
+                        <div class="seller-product-icon">
+                            🔑
+                        </div>
+
+                        <div class="seller-product-info">
+
+                            <h3>
+                                Custom Photo Keychain
+                            </h3>
+
+                            <p>
+                                Accessories
+                            </p>
+
+                        </div>
+
+                        <strong>
+                            ₹499
+                        </strong>
+
+                        <span class="stock">
+                            In Stock
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="editProduct('Custom Photo Keychain')">
+
+                            Edit
+
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="deleteProduct('Custom Photo Keychain')">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ============================== -->
+            <!-- MANAGE STORE -->
+            <!-- ============================== -->
+
+            <div class="seller-side-panel">
+
+                <p>
+                    QUICK ACTIONS
+                </p>
+
+                <h2>
+                    Manage Store
+                </h2>
+
+
+                <button
+                    type="button"
+                    onclick="addNewProduct()">
+
+                    ➕ Add New Product
+
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="showSection('orders')">
+
+                    📦 Manage Orders
+
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="showSection('sales')">
+
+                    📊 View Sales
+
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="showSection('settings')">
+
+                    ⚙️ Store Settings
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- ORDERS SECTION -->
+        <!-- ============================== -->
+
+        <section
+            id="ordersSection"
+            class="manage-section">
+
+            <div class="manage-card">
+
+                <button
+                    class="back-button"
+                    onclick="showDashboardHome()">
+
+                    ← Back
+
+                </button>
+
+                <h2>
+                    📦 Manage Orders
+                </h2>
+
+
+                <div class="order-item">
+
+                    <strong>
+                        Order #1001
+                    </strong>
+
+                    Custom Memory Box
+
+                    <br>
+
+                    ₹799
+
+                    <br>
+
+                    Status:
+                    <b>Delivered</b>
+
+                </div>
+
+
+                <div class="order-item">
+
+                    <strong>
+                        Order #1002
+                    </strong>
+
+                    Name Printed Mug
+
+                    <br>
+
+                    ₹349
+
+                    <br>
+
+                    Status:
+                    <b>Processing</b>
+
+                </div>
+
+
+                <div class="order-item">
+
+                    <strong>
+                        Order #1003
+                    </strong>
+
+                    Custom Name Wallet
+
+                    <br>
+
+                    ₹599
+
+                    <br>
+
+                    Status:
+                    <b>Shipped</b>
+
+                </div>
+
+
+                <div class="order-item">
+
+                    <strong>
+                        Order #1004
+                    </strong>
+
+                    Custom Photo Keychain
+
+                    <br>
+
+                    ₹499
+
+                    <br>
+
+                    Status:
+                    <b>Pending</b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- SALES SECTION -->
+        <!-- ============================== -->
+
+        <section
+            id="salesSection"
+            class="manage-section">
+
+            <div class="manage-card">
+
+                <button
+                    class="back-button"
+                    onclick="showDashboardHome()">
+
+                    ← Back
+
+                </button>
+
+                <h2>
+                    📊 Sales Overview
+                </h2>
+
+
+                <div class="sales-item">
+
+                    <strong>
+                        Today's Sales
+                    </strong>
+
+                    ₹1,850
+
+                </div>
+
+
+                <div class="sales-item">
+
+                    <strong>
+                        This Week
+                    </strong>
+
+                    ₹6,750
+
+                </div>
+
+
+                <div class="sales-item">
+
+                    <strong>
+                        This Month
+                    </strong>
+
+                    ₹12,450
+
+                </div>
+
+
+                <div class="sales-item">
+
+                    <strong>
+                        Total Orders
+                    </strong>
+
+                    18 Orders
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- SETTINGS SECTION -->
+        <!-- ============================== -->
+
+        <section
+            id="settingsSection"
+            class="manage-section">
+
+            <div class="manage-card">
+
+                <button
+                    class="back-button"
+                    onclick="showDashboardHome()">
+
+                    ← Back
+
+                </button>
+
+                <h2>
+                    ⚙️ Store Settings
+                </h2>
+
+
+                <div class="setting-item">
+
+                    <strong>
+                        Store Name
+                    </strong>
+
+                    <p>
+                        Personalised Gift Store
+                    </p>
+
+                    <button
+                        onclick="alert('Store name settings opened.')">
+
+                        Edit Store Name
+
+                    </button>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <strong>
+                        Store Status
+                    </strong>
+
+                    <p>
+                        Store is currently Active
+                    </p>
+
+                    <button
+                        onclick="alert('Store status updated.')">
+
+                        Manage Status
+
+                    </button>
+
+                </div>
+
+
+                <div class="setting-item">
+
+                    <strong>
+                        Notifications
+                    </strong>
+
+                    <p>
+                        Seller notifications are enabled.
+                    </p>
+
+                    <button
+                        onclick="alert('Notification settings opened.')">
+
+                        Manage Notifications
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================== -->
+    <!-- FOOTER -->
+    <!-- ============================== -->
+
+    <footer class="seller-footer">
+
+        <p>
+            © 2026 Personalised Gift Store.
+            Seller Workspace.
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        // ==============================
+        // SHOW DASHBOARD SECTIONS
+        // ==============================
+
+        function showSection(sectionName) {
+
+            const ordersSection =
+                document.getElementById("ordersSection");
+
+            const salesSection =
+                document.getElementById("salesSection");
+
+            const settingsSection =
+                document.getElementById("settingsSection");
+
+
+            ordersSection.classList.remove("active");
+
+            salesSection.classList.remove("active");
+
+            settingsSection.classList.remove("active");
+
+
+            if (sectionName === "orders") {
+
+                ordersSection.classList.add("active");
+
+                ordersSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+
+            if (sectionName === "sales") {
+
+                salesSection.classList.add("active");
+
+                salesSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+
+            if (sectionName === "settings") {
+
+                settingsSection.classList.add("active");
+
+                settingsSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+
+        // ==============================
+        // BACK TO DASHBOARD
+        // ==============================
+
+        function showDashboardHome() {
+
+            const sections =
+                document.querySelectorAll(".manage-section");
+
+
+            sections.forEach(function(section) {
+
+                section.classList.remove("active");
+
+            });
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Product Details | HARSHITHA MART
+    </title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+            background: #f7f8f3;
+            color: #26352b;
+        }
+
+
+        header {
+            background: #173b2b;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            background: #d9b56d;
+            color: #173b2b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .logo h2 {
+            font-size: 22px;
+        }
+
+
+        .logo p {
+            font-size: 12px;
+            color: #d9d9d9;
+            margin-top: 3px;
+        }
+
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            border: 1px solid #ffffff66;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+
+        .back-btn:hover {
+            background: #ffffff18;
+        }
+
+
+        .product-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .product-image {
+            min-height: 400px;
+            background: #edf1eb;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+        }
+
+
+        .product-info {
+            padding: 20px 0;
+        }
+
+
+        .category {
+            display: inline-block;
+            background: #e5f0e8;
+            color: #23603f;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+
+        .product-info h1 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+
+        .rating {
+            color: #d59b28;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #173b2b;
+            margin-bottom: 20px;
+        }
+
+
+        .description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        .quantity button {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: #173b2b;
+            color: white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
+        #quantity {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        .add-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: #173b2b;
+            color: white;
+            border-radius: 9px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+
+        .add-btn:hover {
+            background: #24583f;
+        }
+
+
+        footer {
+            text-align: center;
+            background: #173b2b;
+            color: white;
+            padding: 22px;
+            margin-top: 40px;
+        }
+
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+
+            .product-container {
+                grid-template-columns: 1fr;
+                padding: 22px;
+                margin: 30px auto;
+            }
+
+
+            .product-image {
+                min-height: 280px;
+            }
+
+
+            .product-info h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================== -->
+    <!-- HEADER -->
+    <!-- ============================== -->
+
+    <header>
+
+
+        <div class="logo">
+
+
+            <div class="logo-circle">
+                H
+            </div>
+
+
+            <div>
+
+                <h2>
+                    HARSHITHA MART
+                </h2>
+
+                <p>
+                    Thoughtful gifts, made personal.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <a
+            href="home.html"
+            class="back-btn">
+
+            ← Back to Home
+
+        </a>
+
+
+    </header>
+
+
+
+    <!-- ============================== -->
+    <!-- PRODUCT DETAILS -->
+    <!-- ============================== -->
+
+    <main>
+
+
+        <div class="product-container">
+
+
+            <div
+                class="product-image"
+                id="productImage">
+
+                🎁
+
+            </div>
+
+
+
+            <div class="product-info">
+
+
+                <span
+                    class="category"
+                    id="productCategory">
+
+                    Home
+
+                </span>
+
+
+
+                <h1 id="productName">
+
+                    Custom Memory Box
+
+                </h1>
+
+
+
+                <div
+                    class="rating"
+                    id="productRating">
+
+                    ★★★★★
+                    <span style="color:#777;">
+                        4.8
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="price"
+                    id="productPrice">
+
+                    ₹799
+
+                </div>
+
+
+
+                <p
+                    class="description"
+                    id="productDescription">
+
+                    A beautiful keepsake box
+                    for special memories.
+
+                </p>
+
+
+
+                <!-- QUANTITY -->
+
+                <div class="quantity">
+
+
+                    <button
+                        type="button"
+                        onclick="decreaseQuantity()">
+
+                        −
+
+                    </button>
+
+
+                    <span id="quantity">
+                        1
+                    </span>
+
+
+                    <button
+                        type="button"
+                        onclick="increaseQuantity()">
+
+                        +
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- ADD TO CART -->
+
+                <button
+                    class="add-btn"
+                    type="button"
+                    onclick="addProductToCart()">
+
+                    🛒 Add to Cart
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ============================== -->
+    <!-- FOOTER -->
+    <!-- ============================== -->
+
+    <footer>
+
+        © 2026 HARSHITHA MART |
+        All Rights Reserved
+
+    </footer>
+
+
+
+    <script>
+
+
+        // ==================================
+        // PRODUCT DATA
+        // ==================================
+
+        const products = {
+
+            "Custom Memory Box": {
+
+                category: "Home",
+
+                price: "₹799",
+
+                rating: "4.8",
+
+                image: "🎁",
+
+                description:
+                    "A beautiful keepsake box for special memories."
+
+            },
+
+
+            "Name Printed Mug": {
+
+                category: "Home & Lifestyle",
+
+                price: "₹349",
+
+                rating: "4.7",
+
+                image: "☕",
+
+                description:
+                    "A simple personalised mug for everyday moments."
+
+            },
+
+
+            "Custom Name Wallet": {
+
+                category: "Accessories",
+
+                price: "₹599",
+
+                rating: "4.6",
+
+                image: "👜",
+
+                description:
+                    "A stylish wallet with a personalised name detail."
+
+            },
+
+
+            "Personalised Photo Frame": {
+
+                category: "Home Decor",
+
+                price: "₹499",
+
+                rating: "4.9",
+
+                image: "🖼️",
+
+                description:
+                    "Turn a favourite memory into a thoughtful gift."
+
+            }
+
+        };
+
+
+
+        // ==================================
+        // GET PRODUCT FROM URL
+        // ==================================
+
+        const urlParams =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const selectedProduct =
+            urlParams.get("product");
+
+
+
+        // ==================================
+        // LOAD PRODUCT
+        // ==================================
+
+        if (
+            selectedProduct &&
+            products[selectedProduct]
+        ) {
+
+
+            const product =
+                products[selectedProduct];
+
+
+            document.getElementById(
+                "productName"
+            ).textContent =
+                selectedProduct;
+
+
+            document.getElementById(
+                "productCategory"
+            ).textContent =
+                product.category;
+
+
+            document.getElementById(
+                "productPrice"
+            ).textContent =
+                product.price;
+
+
+            document.getElementById(
+                "productImage"
+            ).textContent =
+                product.image;
+
+
+            document.getElementById(
+                "productDescription"
+            ).textContent =
+                product.description;
+
+
+            document.getElementById(
+                "productRating"
+            ).innerHTML =
+                "★★★★★ " +
+                "<span style='color:#777;'>" +
+                product.rating +
+                "</span>";
+
+        }
+
+
+
+        // ==================================
+        // QUANTITY
+        // ==================================
+
+        let quantity = 1;
+
+
+
+        function increaseQuantity() {
+
+            quantity++;
+
+
+            document.getElementById(
+                "quantity"
+            ).textContent =
+                quantity;
+
+        }
+
+
+
+        function decreaseQuantity() {
+
+            if (quantity > 1) {
+
+                quantity--;
+
+
+                document.getElementById(
+                    "quantity"
+                ).textContent =
+                    quantity;
+
+            }
+
+        }
+
+
+
+        // ==================================
+        // ADD PRODUCT TO CART
+        // ==================================
+
+        function addProductToCart() {
+
+
+            let cartItems =
+                parseInt(
+                    localStorage.getItem(
+                        "cartItems"
+                    )
+                ) || 0;
+
+
+            cartItems += quantity;
+
+
+            localStorage.setItem(
+                "cartItems",
+                cartItems
+            );
+
+
+            alert(
+                quantity +
+                " product(s) added to cart!"
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

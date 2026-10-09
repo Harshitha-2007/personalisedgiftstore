@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Admin Dashboard | Personalised Gift Store
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* ==============================
+           ADMIN MANAGEMENT SECTIONS
+           ============================== */
+
+        .admin-manage-section {
+            margin-top: 25px;
+            display: none;
+        }
+
+        .admin-manage-section.active {
+            display: block;
+        }
+
+
+        .admin-manage-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .admin-manage-card h2 {
+            margin-bottom: 20px;
+        }
+
+
+        .admin-back-button {
+            margin-bottom: 18px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+
+        .admin-manage-item {
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+
+        .admin-manage-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+
+        .admin-manage-item button {
+            margin-top: 10px;
+            padding: 9px 16px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+
+        .report-box {
+            padding: 18px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+
+        .report-box strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         ADMIN NAVBAR
+         ============================== -->
+
+    <header class="admin-navbar">
+
+
+        <div class="admin-brand">
+
+            <div class="admin-logo">
+                P
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Personalised Gift Store
+                </h2>
+
+                <span>
+                    Admin Control Panel
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="admin-nav">
+
+            <a
+                href="#"
+                class="active"
+                onclick="showAdminHome(); return false;">
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#"
+                onclick="showAdminSection('users'); return false;">
+
+                Users
+
+            </a>
+
+
+            <a
+                href="#"
+                onclick="showAdminSection('products'); return false;">
+
+                Products
+
+            </a>
+
+
+            <a
+                href="#"
+                onclick="showAdminSection('orders'); return false;">
+
+                Orders
+
+            </a>
+
+        </nav>
+
+
+
+        <div class="admin-actions">
+
+            <button type="button">
+                🔔
+            </button>
+
+            <button type="button">
+                👤
+            </button>
+
+            <a href="index.html">
+                Logout
+            </a>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- ==============================
+         MAIN ADMIN DASHBOARD
+         ============================== -->
+
+    <main class="admin-dashboard">
+
+
+        <!-- ==============================
+             WELCOME
+             ============================== -->
+
+        <section class="admin-welcome">
+
+
+            <div>
+
+                <p class="admin-label">
+                    ADMIN DASHBOARD
+                </p>
+
+
+                <h1>
+                    Welcome, Admin!
+                </h1>
+
+
+                <p>
+                    Monitor users, products, orders and
+                    marketplace activities from one place.
+                </p>
+
+            </div>
+
+
+
+            <button
+                class="admin-report-button"
+                type="button"
+                onclick="showAdminSection('reports')">
+
+                View Reports
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             STATS
+             ============================== -->
+
+        <section class="admin-stats">
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Total Users
+                </span>
+
+                <strong>
+                    1,248
+                </strong>
+
+                <p>
+                    Registered buyers
+                </p>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Total Sellers
+                </span>
+
+                <strong>
+                    86
+                </strong>
+
+                <p>
+                    Active sellers
+                </p>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Total Products
+                </span>
+
+                <strong>
+                    524
+                </strong>
+
+                <p>
+                    Listed products
+                </p>
+
+            </div>
+
+
+
+            <div class="admin-stat-card">
+
+                <span>
+                    Total Orders
+                </span>
+
+                <strong>
+                    2,415
+                </strong>
+
+                <p>
+                    Marketplace orders
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             MAIN GRID
+             ============================== -->
+
+        <section class="admin-main-grid">
+
+
+            <!-- ==============================
+                 RECENT ORDERS
+                 ============================== -->
+
+            <div class="admin-panel">
+
+
+                <div class="admin-panel-heading">
+
+
+                    <div>
+
+                        <p>
+                            MARKETPLACE
+                        </p>
+
+                        <h2>
+                            Recent Orders
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        onclick="showAdminSection('orders')">
+
+                        View All
+
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="admin-order-list">
+
+
+                    <!-- ORDER 1 -->
+
+                    <div class="admin-order">
+
+                        <div class="order-icon">
+                            🎁
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Custom Memory Box
+                            </h3>
+
+                            <p>
+                                Order #PGS1024
+                            </p>
+
+                        </div>
+
+
+                        <strong>
+                            ₹799
+                        </strong>
+
+
+                        <span class="order-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- ORDER 2 -->
+
+                    <div class="admin-order">
+
+                        <div class="order-icon">
+                            ☕
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Name Printed Mug
+                            </h3>
+
+                            <p>
+                                Order #PGS1025
+                            </p>
+
+                        </div>
+
+
+                        <strong>
+                            ₹349
+                        </strong>
+
+
+                        <span class="order-status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- ORDER 3 -->
+
+                    <div class="admin-order">
+
+                        <div class="order-icon">
+                            👜
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Custom Name Wallet
+                            </h3>
+
+                            <p>
+                                Order #PGS1026
+                            </p>
+
+                        </div>
+
+
+                        <strong>
+                            ₹599
+                        </strong>
+
+
+                        <span class="order-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==============================
+                 ADMIN TOOLS
+                 ============================== -->
+
+            <div class="admin-side-panel">
+
+
+                <p>
+                    ADMIN TOOLS
+                </p>
+
+
+                <h2>
+                    Manage Store
+                </h2>
+
+
+
+                <button
+                    type="button"
+                    onclick="showAdminSection('users')">
+
+                    👥 Manage Users
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    onclick="showAdminSection('sellers')">
+
+                    🏪 Manage Sellers
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    onclick="showAdminSection('products')">
+
+                    📦 Manage Products
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    onclick="showAdminSection('orders')">
+
+                    🛒 Manage Orders
+
+                </button>
+
+
+
+                <button
+                    type="button"
+                    onclick="showAdminSection('settings')">
+
+                    ⚙️ Settings
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             OVERVIEW
+             ============================== -->
+
+        <section class="admin-overview">
+
+
+            <div class="overview-card">
+
+                <span>
+                    Pending Sellers
+                </span>
+
+                <strong>
+                    12
+                </strong>
+
+                <p>
+                    Seller accounts waiting for review
+                </p>
+
+            </div>
+
+
+
+            <div class="overview-card">
+
+                <span>
+                    Pending Products
+                </span>
+
+                <strong>
+                    28
+                </strong>
+
+                <p>
+                    Products waiting for approval
+                </p>
+
+            </div>
+
+
+
+            <div class="overview-card">
+
+                <span>
+                    Support Requests
+                </span>
+
+                <strong>
+                    7
+                </strong>
+
+                <p>
+                    Customer support requests
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             USERS
+             ============================== -->
+
+        <section
+            id="adminUsers"
+            class="admin-manage-section">
+
+
+            <div class="admin-manage-card">
+
+
+                <button
+                    class="admin-back-button"
+                    onclick="showAdminHome()">
+
+                    ← Back
+
+                </button>
+
+
+                <h2>
+                    👥 Manage Users
+                </h2>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Harshitha
+                    </strong>
+
+                    Buyer Account
+
+                    <br>
+
+                    Email:
+                    harshitha@example.com
+
+                    <br>
+
+                    Status:
+                    <b>Active</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('User details opened.')">
+
+                        View User
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Priya
+                    </strong>
+
+                    Buyer Account
+
+                    <br>
+
+                    Email:
+                    priya@example.com
+
+                    <br>
+
+                    Status:
+                    <b>Active</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('User details opened.')">
+
+                        View User
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Kavya
+                    </strong>
+
+                    Buyer Account
+
+                    <br>
+
+                    Email:
+                    kavya@example.com
+
+                    <br>
+
+                    Status:
+                    <b>Active</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('User details opened.')">
+
+                        View User
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             SELLERS
+             ============================== -->
+
+        <section
+            id="adminSellers"
+            class="admin-manage-section">
+
+
+            <div class="admin-manage-card">
+
+
+                <button
+                    class="admin-back-button"
+                    onclick="showAdminHome()">
+
+                    ← Back
+
+                </button>
+
+
+                <h2>
+                    🏪 Manage Sellers
+                </h2>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Gift Corner
+                    </strong>
+
+                    Seller Account
+
+                    <br>
+
+                    Products:
+                    24
+
+                    <br>
+
+                    Status:
+                    <b>Active</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('Seller details opened.')">
+
+                        View Seller
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Creative Gifts
+                    </strong>
+
+                    Seller Account
+
+                    <br>
+
+                    Products:
+                    18
+
+                    <br>
+
+                    Status:
+                    <b>Active</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('Seller details opened.')">
+
+                        View Seller
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Personal Touch
+                    </strong>
+
+                    Seller Account
+
+                    <br>
+
+                    Products:
+                    12
+
+                    <br>
+
+                    Status:
+                    <b>Pending Review</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('Seller review opened.')">
+
+                        Review Seller
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             PRODUCTS
+             ============================== -->
+
+        <section
+            id="adminProducts"
+            class="admin-manage-section">
+
+
+            <div class="admin-manage-card">
+
+
+                <button
+                    class="admin-back-button"
+                    onclick="showAdminHome()">
+
+                    ← Back
+
+                </button>
+
+
+                <h2>
+                    📦 Manage Products
+                </h2>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Custom Memory Box
+                    </strong>
+
+                    Category:
+                    Personalised Gifts
+
+                    <br>
+
+                    Price:
+                    ₹799
+
+                    <br>
+
+                    Status:
+                    <b>Approved</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('Product details opened.')">
+
+                        View Product
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Name Printed Mug
+                    </strong>
+
+                    Category:
+                    Home & Lifestyle
+
+                    <br>
+
+                    Price:
+                    ₹349
+
+                    <br>
+
+                    Status:
+                    <b>Approved</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('Product details opened.')">
+
+                        View Product
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Custom Photo Keychain
+                    </strong>
+
+                    Category:
+                    Accessories
+
+                    <br>
+
+                    Price:
+                    ₹499
+
+                    <br>
+
+                    Status:
+                    <b>Pending Approval</b>
+
+                    <br>
+
+                    <button
+                        onclick="alert('Product approval opened.')">
+
+                        Review Product
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             ORDERS
+             ============================== -->
+
+        <section
+            id="adminOrders"
+            class="admin-manage-section">
+
+
+            <div class="admin-manage-card">
+
+
+                <button
+                    class="admin-back-button"
+                    onclick="showAdminHome()">
+
+                    ← Back
+
+                </button>
+
+
+                <h2>
+                    🛒 Manage Orders
+                </h2>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Order #PGS1024
+                    </strong>
+
+                    Custom Memory Box
+
+                    <br>
+
+                    Amount:
+                    ₹799
+
+                    <br>
+
+                    Status:
+                    <b>Completed</b>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Order #PGS1025
+                    </strong>
+
+                    Name Printed Mug
+
+                    <br>
+
+                    Amount:
+                    ₹349
+
+                    <br>
+
+                    Status:
+                    <b>Pending</b>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Order #PGS1026
+                    </strong>
+
+                    Custom Name Wallet
+
+                    <br>
+
+                    Amount:
+                    ₹599
+
+                    <br>
+
+                    Status:
+                    <b>Completed</b>
+
+                </div>
+
+
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Order #PGS1027
+                    </strong>
+
+                    Custom Photo Keychain
+
+                    <br>
+
+                    Amount:
+                    ₹499
+
+                    <br>
+
+                    Status:
+                    <b>Processing</b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             REPORTS
+             ============================== -->
+
+        <section
+            id="adminReports"
+            class="admin-manage-section">
+
+            <div class="admin-manage-card">
+
+                <button
+                    class="admin-back-button"
+                    onclick="showAdminHome()">
+
+                    ← Back
+
+                </button>
+
+                <h2>
+                    📊 Admin Reports
+                </h2>
+
+                <div class="report-box">
+
+                    <strong>
+                        Total Sales
+                    </strong>
+
+                    ₹18,450
+
+                </div>
+
+                <div class="report-box">
+
+                    <strong>
+                        Completed Orders
+                    </strong>
+
+                    2,180 Orders
+
+                </div>
+
+                <div class="report-box">
+
+                    <strong>
+                        Pending Orders
+                    </strong>
+
+                    235 Orders
+
+                </div>
+
+                <div class="report-box">
+
+                    <strong>
+                        Active Sellers
+                    </strong>
+
+                    86 Sellers
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             SETTINGS
+             ============================== -->
+
+        <section
+            id="adminSettings"
+            class="admin-manage-section">
+
+            <div class="admin-manage-card">
+
+                <button
+                    class="admin-back-button"
+                    onclick="showAdminHome()">
+
+                    ← Back
+
+                </button>
+
+                <h2>
+                    ⚙️ Admin Settings
+                </h2>
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Store Settings
+                    </strong>
+
+                    Manage store information and
+                    marketplace settings.
+
+                    <br>
+
+                    <button
+                        onclick="alert('Store settings opened.')">
+
+                        Open Settings
+
+                    </button>
+
+                </div>
+
+                <div class="admin-manage-item">
+
+                    <strong>
+                        Account Settings
+                    </strong>
+
+                    Manage administrator account details.
+
+                    <br>
+
+                    <button
+                        onclick="alert('Account settings opened.')">
+
+                        Account Settings
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         ADMIN JAVASCRIPT
+         ============================== -->
+
+    <script>
+
+        function hideAllAdminSections() {
+
+            const sections =
+                document.querySelectorAll(
+                    ".admin-manage-section"
+                );
+
+            sections.forEach(function(section) {
+
+                section.classList.remove("active");
+
+            });
+
+        }
+
+
+        function showAdminHome() {
+
+            hideAllAdminSections();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function showAdminSection(section) {
+
+            hideAllAdminSections();
+
+            let targetSection = null;
+
+
+            if (section === "users") {
+
+                targetSection =
+                    document.getElementById(
+                        "adminUsers"
+                    );
+
+            }
+
+            else if (section === "sellers") {
+
+                targetSection =
+                    document.getElementById(
+                        "adminSellers"
+                    );
+
+            }
+
+            else if (section === "products") {
+
+                targetSection =
+                    document.getElementById(
+                        "adminProducts"
+                    );
+
+            }
+
+            else if (section === "orders") {
+
+                targetSection =
+                    document.getElementById(
+                        "adminOrders"
+                    );
+
+            }
+
+            else if (section === "reports") {
+
+                targetSection =
+                    document.getElementById(
+                        "adminReports"
+                    );
+
+            }
+
+            else if (section === "settings") {
+
+                targetSection =
+                    document.getElementById(
+                        "adminSettings"
+                    );
+
+            }
+
+
+            if (targetSection) {
+
+                targetSection.classList.add("active");
+
+                targetSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

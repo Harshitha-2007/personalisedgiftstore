@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Product | Personalised Gift Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .add-product-page {
+            min-height: 100vh;
+            background: #f7f1e7;
+            padding: 40px 20px;
+        }
+
+        .add-product-container {
+            max-width: 700px;
+            margin: auto;
+            background: #fffdf8;
+            padding: 35px;
+            border-radius: 22px;
+            border: 1px solid #e5d9c8;
+            box-shadow: 0 12px 35px rgba(40, 50, 40, 0.10);
+        }
+
+        .add-product-back {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #176b55;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .add-product-container h1 {
+            color: #242923;
+            margin-bottom: 8px;
+        }
+
+        .add-product-container > p {
+            color: #716e67;
+            margin-bottom: 28px;
+        }
+
+        .product-form-group {
+            margin-bottom: 20px;
+        }
+
+        .product-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #343831;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .product-form-group input,
+        .product-form-group select,
+        .product-form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ded3c2;
+            border-radius: 10px;
+            background: #fffaf1;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .product-form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .product-form-group input:focus,
+        .product-form-group select:focus,
+        .product-form-group textarea:focus {
+            border-color: #176b55;
+            box-shadow: 0 0 0 3px rgba(23, 107, 85, 0.10);
+        }
+
+        .product-form-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .save-product-button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #176b55;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cancel-product-button {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ded3c2;
+            border-radius: 10px;
+            background: #fffaf1;
+            color: #343831;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .save-product-button:hover {
+            background: #0f503f;
+        }
+
+        .cancel-product-button:hover {
+            background: #f4ead7;
+        }
+
+        @media (max-width: 600px) {
+            .add-product-page {
+                padding: 25px 15px;
+            }
+
+            .add-product-container {
+                padding: 25px 20px;
+            }
+
+            .product-form-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main class="add-product-page">
+
+        <section class="add-product-container">
+
+            <a href="seller-dashboard.html" class="add-product-back">
+                ← Back to Seller Dashboard
+            </a>
+
+            <h1>Add New Product</h1>
+
+            <p>
+                Add a new personalised gift to your store.
+            </p>
+
+
+            <form id="addProductForm">
+
+                <div class="product-form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                    >
+
+                </div>
+
+
+                <div class="product-form-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <select id="productCategory">
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Fashion">
+                            Fashion
+                        </option>
+
+                        <option value="Electronics">
+                            Electronics
+                        </option>
+
+                        <option value="Home">
+                            Home
+                        </option>
+
+                        <option value="Beauty">
+                            Beauty
+                        </option>
+
+                        <option value="Accessories">
+                            Accessories
+                        </option>
+
+                        <option value="Sports">
+                            Sports
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="product-form-group">
+
+                    <label for="productPrice">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        placeholder="Enter price"
+                    >
+
+                </div>
+
+
+                <div class="product-form-group">
+
+                    <label for="productStock">
+                        Stock Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        placeholder="Enter stock quantity"
+                    >
+
+                </div>
+
+
+                <div class="product-form-group">
+
+                    <label for="productDescription">
+                        Product Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        placeholder="Enter product description"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="product-form-buttons">
+
+                    <button
+                        type="submit"
+                        class="save-product-button"
+                    >
+                        Save Product
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancel-product-button"
+                        onclick="window.location.href='seller-dashboard.html'"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+<script>
+
+    const addProductForm =
+        document.getElementById("addProductForm");
+
+    addProductForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const productName =
+            document.getElementById("productName").value.trim();
+
+        const productCategory =
+            document.getElementById("productCategory").value;
+
+        const productPrice =
+            document.getElementById("productPrice").value.trim();
+
+        const productStock =
+            document.getElementById("productStock").value.trim();
+
+        const productDescription =
+            document.getElementById("productDescription").value.trim();
+
+
+        if (
+            productName === "" ||
+            productCategory === "" ||
+            productPrice === "" ||
+            productStock === ""
+        ) {
+            alert("Please fill all required product details.");
+            return;
+        }
+
+
+        const product = {
+
+            name: productName,
+
+            category: productCategory,
+
+            price: productPrice,
+
+            stock: productStock,
+
+            description: productDescription
+
+        };
+
+
+        localStorage.setItem(
+            "newSellerProduct",
+            JSON.stringify(product)
+        );
+
+
+        alert("Product added successfully!");
+
+
+        window.location.href =
+            "seller-dashboard.html";
+
+    });
+
+</script>
+    
+</body>
+
+</html>

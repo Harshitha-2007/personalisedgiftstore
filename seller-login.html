@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seller Login | Personalised Gift Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-card seller-login-card">
+
+            <!-- Back to Main Page -->
+            <a href="index.html" class="back-link">
+                ← Back to main page
+            </a>
+
+
+            <!-- Seller Logo -->
+            <div class="login-logo seller-logo">
+                S
+            </div>
+
+
+            <p class="login-label seller-label">
+                SELLER PORTAL
+            </p>
+
+
+            <h1>
+                Welcome, Seller!
+            </h1>
+
+
+            <p class="login-description">
+                Sign in to manage your products, orders and store.
+            </p>
+
+
+            <!-- Seller Login Form -->
+            <form id="sellerLoginForm">
+
+                <!-- Seller Email -->
+                <div class="input-group">
+
+                    <label for="sellerEmail">
+                        Seller Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="sellerEmail"
+                        placeholder="Enter your seller email"
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="sellerPassword">
+                        Password
+                    </label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="sellerPassword"
+                            placeholder="Enter your password"
+                        >
+
+                        <button
+                            type="button"
+                            id="sellerTogglePassword"
+                            class="show-password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember + Forgot -->
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="sellerRememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a href="#" class="forgot-link">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- Seller Login Button -->
+                <button
+                    type="submit"
+                    class="login-button seller-login-button"
+                >
+                    Seller Login
+                </button>
+
+            </form>
+
+
+            <!-- Seller Information -->
+            <div class="seller-info">
+
+                <strong>Seller workspace</strong>
+
+                <p>
+                    Manage products, orders and sales from your dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- Demo Notice -->
+            <p class="demo-note">
+                Demo login — real authentication will be added with the backend.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

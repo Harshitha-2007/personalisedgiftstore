@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Personalised Gift Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-card admin-login-card">
+
+            <!-- Back to Main Page -->
+            <a href="index.html" class="back-link">
+                ← Back to main page
+            </a>
+
+
+            <!-- Admin Logo -->
+            <div class="login-logo admin-logo">
+                A
+            </div>
+
+
+            <p class="login-label admin-label">
+                ADMIN CONTROL PANEL
+            </p>
+
+
+            <h1>
+                Admin Sign In
+            </h1>
+
+
+            <p class="login-description">
+                Access marketplace management and administration tools.
+            </p>
+
+
+            <!-- Admin Login Form -->
+            <form id="adminLoginForm">
+
+                <!-- Admin Email -->
+                <div class="input-group">
+
+                    <label for="adminEmail">
+                        Admin Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        placeholder="Enter your admin email"
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter your password"
+                        >
+
+                        <button
+                            type="button"
+                            id="adminTogglePassword"
+                            class="show-password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember + Forgot -->
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="adminRememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a href="#" class="forgot-link">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- Admin Login Button -->
+                <button
+                    type="submit"
+                    class="login-button admin-login-button"
+                >
+                    Admin Login
+                </button>
+
+            </form>
+
+
+            <!-- Security Information -->
+            <div class="admin-info">
+
+                <strong>Administrator access</strong>
+
+                <p>
+                    This area is intended for marketplace administration.
+                </p>
+
+            </div>
+
+
+            <!-- Demo Notice -->
+            <p class="demo-note">
+                Demo login — real authentication will be added with the backend.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

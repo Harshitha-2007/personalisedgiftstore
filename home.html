@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Home | HARSHITHA MART
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================== -->
+    <!-- NAVIGATION -->
+    <!-- ============================== -->
+
+    <header class="home-navbar">
+
+
+        <div class="home-brand">
+
+            <div class="home-logo">
+                H
+            </div>
+
+
+            <div>
+
+                <h2>
+                    HARSHITHA MART
+                </h2>
+
+                <span>
+                    Thoughtful gifts, made personal.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="home-nav">
+
+            <a
+                href="home.html"
+                class="active">
+
+                Home
+
+            </a>
+
+
+            <a href="#categories">
+
+                Categories
+
+            </a>
+
+
+            <a href="#products">
+
+                Products
+
+            </a>
+
+
+            <a href="#offers">
+
+                Offers
+
+            </a>
+
+        </nav>
+
+
+
+        <div class="home-actions">
+
+
+            <button
+                type="button"
+                title="Wishlist"
+                class="wishlist-button">
+
+                ♡
+
+            </button>
+
+
+            <button
+                type="button"
+                title="Cart"
+                id="cartButton">
+
+                🛒
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                title="Profile">
+
+                👤
+
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- ============================== -->
+    <!-- MAIN -->
+    <!-- ============================== -->
+
+    <main>
+
+
+        <!-- ============================== -->
+        <!-- HERO -->
+        <!-- ============================== -->
+
+        <section class="hero-section">
+
+
+            <div class="hero-content">
+
+
+                <p class="hero-label">
+                    MADE WITH YOUR STORY IN MIND
+                </p>
+
+
+                <h1>
+
+                    Find a gift that
+                    <span>
+                        feels personal.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    From custom keepsakes to thoughtful
+                    everyday gifts, discover something
+                    special for every person and occasion.
+
+                </p>
+
+
+                <a
+                    href="#products"
+                    class="hero-button">
+
+                    Shop Now
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="hero-visual">
+
+
+                <div class="gift-shape">
+                    🎁
+                </div>
+
+
+                <div class="hero-note note-one">
+                    Made for you
+                </div>
+
+
+                <div class="hero-note note-two">
+                    Made with love
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- SEARCH -->
+        <!-- ============================== -->
+
+        <section class="search-section">
+
+
+            <div class="search-box">
+
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search for gifts..."
+                >
+
+
+                <button
+                    type="button"
+                    id="searchButton">
+
+                    Search
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- CATEGORIES -->
+        <!-- ============================== -->
+
+        <section
+            class="content-section"
+            id="categories">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p>
+                        EXPLORE
+                    </p>
+
+                    <h2>
+                        Shop by category
+                    </h2>
+
+                </div>
+
+
+                <span>
+                    Find something for every occasion
+                </span>
+
+
+            </div>
+
+
+
+            <div class="category-grid">
+
+
+                <div
+                    class="category-card"
+                    onclick="showCategory('Fashion')">
+
+                    <div class="category-icon">
+                        👗
+                    </div>
+
+                    <h3>
+                        Fashion
+                    </h3>
+
+                    <p>
+                        Personalised styles and accessories.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-card"
+                    onclick="showCategory('Electronics')">
+
+                    <div class="category-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Electronics
+                    </h3>
+
+                    <p>
+                        Useful gifts with a personal touch.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-card"
+                    onclick="showCategory('Home')">
+
+                    <div class="category-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Home
+                    </h3>
+
+                    <p>
+                        Beautiful ideas for every space.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-card"
+                    onclick="showCategory('Beauty')">
+
+                    <div class="category-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Beauty
+                    </h3>
+
+                    <p>
+                        Thoughtful self-care gift ideas.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-card"
+                    onclick="showCategory('Accessories')">
+
+                    <div class="category-icon">
+                        👜
+                    </div>
+
+                    <h3>
+                        Accessories
+                    </h3>
+
+                    <p>
+                        Small details that make a big impact.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="category-card"
+                    onclick="showCategory('Sports')">
+
+                    <div class="category-icon">
+                        ⚽
+                    </div>
+
+                    <h3>
+                        Sports
+                    </h3>
+
+                    <p>
+                        Gifts for active and sporty people.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- PRODUCTS -->
+        <!-- ============================== -->
+
+        <section
+            class="content-section"
+            id="products">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p>
+                        OUR PICKS
+                    </p>
+
+                    <h2>
+                        Featured gifts
+                    </h2>
+
+                </div>
+
+
+                <span>
+                    Popular choices from our marketplace
+                </span>
+
+
+            </div>
+
+
+
+            <div class="product-grid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product-card">
+
+
+                    <div class="product-image">
+
+                        🎁
+
+
+                        <button
+                            class="wishlist-button"
+                            type="button">
+
+                            ♡
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="product-details">
+
+
+                        <p class="product-category">
+                            Home
+                        </p>
+
+
+                        <h3>
+                            Custom Memory Box
+                        </h3>
+
+
+                        <p>
+                            A beautiful keepsake box
+                            for special memories.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+
+                            <strong>
+                                ₹799
+                            </strong>
+
+
+                            <span>
+                                ★ 4.8
+                            </span>
+
+
+                        </div>
+
+
+                        <button
+                            class="cart-button"
+                            type="button">
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <article class="product-card">
+
+
+                    <div class="product-image">
+
+                        ☕
+
+
+                        <button
+                            class="wishlist-button"
+                            type="button">
+
+                            ♡
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="product-details">
+
+
+                        <p class="product-category">
+                            Home & Lifestyle
+                        </p>
+
+
+                        <h3>
+                            Name Printed Mug
+                        </h3>
+
+
+                        <p>
+                            A simple personalised mug
+                            for everyday moments.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+
+                            <strong>
+                                ₹349
+                            </strong>
+
+
+                            <span>
+                                ★ 4.7
+                            </span>
+
+
+                        </div>
+
+
+                        <button
+                            class="cart-button"
+                            type="button">
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <article class="product-card">
+
+
+                    <div class="product-image">
+
+                        👜
+
+
+                        <button
+                            class="wishlist-button"
+                            type="button">
+
+                            ♡
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="product-details">
+
+
+                        <p class="product-category">
+                            Accessories
+                        </p>
+
+
+                        <h3>
+                            Custom Name Wallet
+                        </h3>
+
+
+                        <p>
+                            A stylish wallet with a
+                            personalised name detail.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+
+                            <strong>
+                                ₹599
+                            </strong>
+
+
+                            <span>
+                                ★ 4.6
+                            </span>
+
+
+                        </div>
+
+
+                        <button
+                            class="cart-button"
+                            type="button">
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- PRODUCT 4 -->
+
+                <article class="product-card">
+
+
+                    <div class="product-image">
+
+                        🖼️
+
+
+                        <button
+                            class="wishlist-button"
+                            type="button">
+
+                            ♡
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="product-details">
+
+
+                        <p class="product-category">
+                            Home Decor
+                        </p>
+
+
+                        <h3>
+                            Personalised Photo Frame
+                        </h3>
+
+
+                        <p>
+                            Turn a favourite memory
+                            into a thoughtful gift.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+
+                            <strong>
+                                ₹499
+                            </strong>
+
+
+                            <span>
+                                ★ 4.9
+                            </span>
+
+
+                        </div>
+
+
+                        <button
+                            class="cart-button"
+                            type="button">
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ============================== -->
+        <!-- OFFER -->
+        <!-- ============================== -->
+
+        <section
+            class="offer-section"
+            id="offers">
+
+
+            <div>
+
+
+                <p class="offer-label">
+                    SPECIAL OFFER
+                </p>
+
+
+                <h2>
+                    Make it personal.
+                </h2>
+
+
+                <p>
+
+                    Explore selected personalised gifts
+                    and discover something meaningful
+                    for your next special occasion.
+
+                </p>
+
+
+                <a
+                    href="#products"
+                    class="offer-button">
+
+                    Explore Gifts
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================== -->
+    <!-- FOOTER -->
+    <!-- ============================== -->
+
+    <footer class="home-footer">
+
+
+        <div>
+
+
+            <h3>
+                HARSHITHA MART
+            </h3>
+
+
+            <p>
+                Making everyday gifting a little
+                more meaningful.
+            </p>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h4>
+                Quick Links
+            </h4>
+
+
+            <a href="home.html">
+                Home
+            </a>
+
+
+            <a href="#categories">
+                Categories
+            </a>
+
+
+            <a href="#products">
+                Products
+            </a>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h4>
+                Customer Care
+            </h4>
+
+
+            <p>
+                Help & Support
+            </p>
+
+
+            <p>
+                Contact Us
+            </p>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
